@@ -22,7 +22,7 @@ export function Contact() {
     <section id="contact" className="bg-[#0d0d0d] px-6 md:px-12 py-24 md:py-36 overflow-hidden" ref={ref}>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
         {/* Left: big CTA text */}
-        <div>
+        <div className="min-w-0">
           <motion.div
             className="flex items-center gap-5 mb-10"
             initial={{ opacity: 0, x: -20 }}
@@ -48,12 +48,12 @@ export function Contact() {
             style={{
               ...DISPLAY,
               fontWeight: 900,
-              fontSize: "clamp(2.75rem, 11vw, 9rem)",
               lineHeight: 0.9,
               letterSpacing: "-0.02em",
               textTransform: "uppercase",
+              whiteSpace: "nowrap",
             }}
-            className="text-foreground mb-10"
+            className="text-foreground mb-10 text-[clamp(2.5rem,11vw,6.5rem)] lg:text-[clamp(2.5rem,5.5vw,6.5rem)]"
             initial={{ opacity: 0, y: 40 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1, delay: 0.1 }}
@@ -81,10 +81,10 @@ export function Contact() {
               <ArrowUpRight size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
             </a>
             <a
-              href="tel:+441234567890"
+              href="tel:+447472899333"
               className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors duration-300 group"
             >
-              <span style={{ ...BODY, fontSize: "1.0625rem" }}>+44 (0) 123 456 7890</span>
+              <span style={{ ...BODY, fontSize: "1.0625rem" }}>+44 (0) 7472 899333</span>
               <ArrowUpRight size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
             </a>
           </motion.div>

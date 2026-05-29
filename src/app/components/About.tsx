@@ -8,7 +8,7 @@ const BODY = { fontFamily: "'DM Sans', sans-serif" } as const;
 const stats = [
   { value: "50+", label: "Projects Delivered" },
   { value: "100%", label: "Client Satisfaction" },
-  { value: "24/7", label: "Ongoing Support" },
+  { value: "24h", label: "Response Time" },
   { value: "5★", label: "Average Rating" },
 ];
 

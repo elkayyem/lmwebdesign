@@ -1,3 +1,5 @@
+import logoCream from "@/assets/logo-cream-cropped.png";
+
 const DISPLAY = { fontFamily: "'Barlow Condensed', sans-serif" } as const;
 const BODY = { fontFamily: "'DM Sans', sans-serif" } as const;
 
@@ -24,12 +26,12 @@ export function Footer() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
         {/* Brand */}
         <div>
-          <a
-            href="#"
-            style={{ ...DISPLAY, fontWeight: 900, fontSize: "2.5rem", letterSpacing: "-0.01em" }}
-            className="text-foreground block mb-4"
-          >
-            LM<span style={{ color: "#C9FF00" }}>.</span>
+          <a href="#" className="flex items-center text-foreground mb-4">
+            <img
+              src={logoCream}
+              alt="LM Web Creators"
+              style={{ height: 44, width: "auto", display: "block" }}
+            />
           </a>
           <p
             style={{ ...BODY, fontSize: "0.9rem", lineHeight: 1.7 }}
@@ -78,11 +80,11 @@ export function Footer() {
             hello@lmwebcreators.com
           </a>
           <a
-            href="tel:+441234567890"
+            href="tel:+447472899333"
             className="text-muted-foreground hover:text-foreground transition-colors duration-300 block mb-8"
             style={{ ...BODY, fontSize: "0.9rem" }}
           >
-            +44 (0) 123 456 7890
+            +44 (0) 7472 899333
           </a>
           <div className="flex flex-wrap gap-4">
             {links.map((link) => (
