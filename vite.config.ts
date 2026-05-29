@@ -16,9 +16,8 @@ function figmaAssetResolver() {
   }
 }
 
-export default defineConfig(({ command }) => ({
-  // Project site is served from https://elkayyem.github.io/lmwebdesign/
-  base: command === 'build' ? '/lmwebdesign/' : '/',
+export default defineConfig({
+  // Served at the root of the custom domain lmwebcreators.co.uk
   plugins: [
     figmaAssetResolver(),
     // The React and Tailwind plugins are both required for Make, even if
@@ -35,4 +34,4 @@ export default defineConfig(({ command }) => ({
 
   // File types to support raw imports. Never add .css, .tsx, or .ts files to this.
   assetsInclude: ['**/*.svg', '**/*.csv'],
-}))
+})
