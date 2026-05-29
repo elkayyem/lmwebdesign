@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Build site
 
 on:
   push:
@@ -7,12 +7,6 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: true
 
 jobs:
   build:
@@ -24,16 +18,10 @@ jobs:
           node-version: 20
       - run: npm install
       - run: npm run build
-      - uses: actions/upload-pages-artifact@v3
+      # Downloadable zip of the finished static site.
+      # Download from the run's "Artifacts" section, unzip, and upload
+      # the contents into Hostinger public_html via File Manager.
+      - uses: actions/upload-artifact@v4
         with:
+          name: site-dist
           path: dist
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
