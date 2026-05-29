@@ -48,14 +48,12 @@ export function Contact() {
             style={{
               ...DISPLAY,
               fontWeight: 900,
-              fontSize: "clamp(2.5rem, 8vw, 6.5rem)",
               lineHeight: 0.9,
               letterSpacing: "-0.02em",
               textTransform: "uppercase",
-              maxWidth: "100%",
-              overflowWrap: "break-word",
+              whiteSpace: "nowrap",
             }}
-            className="text-foreground mb-10"
+            className="text-foreground mb-10 text-[clamp(2.5rem,11vw,6.5rem)] lg:text-[clamp(2.5rem,5.5vw,6.5rem)]"
             initial={{ opacity: 0, y: 40 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1, delay: 0.1 }}
