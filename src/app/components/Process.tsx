@@ -89,13 +89,12 @@ export function Process() {
         {steps.map((step, i) => (
           <motion.div
             key={step.number}
-            className="border-b md:border-b-0 md:border-r border-border last:border-r-0 py-10 md:py-12 md:pr-8 md:pl-0 group"
-            style={{ paddingLeft: i === 0 ? 0 : undefined }}
+            className={`border-b md:border-b-0 md:border-r border-border last:border-r-0 py-10 md:py-12 md:pr-8 ${i === 0 ? "md:pl-0" : "md:pl-8"} group`}
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.1 + i * 0.12 }}
           >
-            <div className="md:px-8 first:md:pl-0">
+            <div>
               <span
                 style={{ ...DISPLAY, fontWeight: 300, fontSize: "3.5rem", letterSpacing: "-0.04em", color: "#C9FF00", lineHeight: 1 }}
                 className="block mb-6"
